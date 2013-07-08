@@ -1,6 +1,6 @@
  <h2>Signup below</h2>
 
-<%= form_tag :user, :url => users_signup_url do |f| %>
+<%= form_for :user, :url => signup_path do |f| %>
   <div>
     <label for="user_name">Username</label>
     <input type="text" name="user_name" id="user_name" />
