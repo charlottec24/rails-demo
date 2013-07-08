@@ -1,4 +1,4 @@
-class CreateController < ApplicationController
+class UsersController < ApplicationController
   
   # def logged_in?
   # 	session[:user]
