@@ -1,2 +1,15 @@
-<h1>Create#signup</h1>
-<p>Find me in app/views/create/signup.html.erb</p>
+ <h2>Signup below</h2>
+
+<%= form_tag :user, :url => users_signup_url do |f| %>
+  <div>
+    <label for="user_name">Username</label>
+    <input type="text" name="user_name" id="user_name" />
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" />
+  </div>
+  <div class="submit">
+    <input class="submit_button" type="submit" value="Sign Up" />
+  </div>
+<% end %>
