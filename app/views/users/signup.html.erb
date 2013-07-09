@@ -1,15 +1,15 @@
  <h2>Signup below</h2>
 
 <%= form_for :user, :url => signup_path do |f| %>
-  <div>
-    <label for="user_name">Username</label>
-    <input type="text" name="user_name" id="user_name" />
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-  </div>
-  <div class="submit">
-    <input class="submit_button" type="submit" value="Sign Up" />
-  </div>
+     <div>
+      <%= f.label :user_name %>       
+      <%= f.text_field :user_name %> 
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.submit "Sign Up" %>
+    </div>
 <% end %>

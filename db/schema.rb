@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130708114153) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "login_count", default: 0
   end
 
 end

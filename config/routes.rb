@@ -1,8 +1,10 @@
 RailsDemo::Application.routes.draw do
   
   root "welcome#index"
+
+  post "login" => 'users#login'
   
-  get "signup" => 'users#signup'
+  get "signup" => 'users#signup_display'
 
   post "signup" => 'users#signup'
 
