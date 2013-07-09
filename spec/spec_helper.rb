@@ -13,6 +13,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+
+  config.include Rack::Test::Methods
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -40,3 +42,13 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+  module UserControllerSpecHelper
+
+    def login_user
+      fill_in :login_username, :with => "Steve11"
+      fill_in :login_password, :with => "steve"
+      click_button 'Login'
+    end
+  
+  end

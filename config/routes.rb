@@ -1,8 +1,12 @@
 RailsDemo::Application.routes.draw do
-  get "welcome/index"
+  
+  root "welcome#index"
+  
   get "signup" => 'users#signup'
 
   post "signup" => 'users#signup'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

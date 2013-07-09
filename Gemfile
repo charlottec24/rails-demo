@@ -33,6 +33,7 @@ group :doc do
 end
 
 group :development, :test do
+  gem 'capybara'
   gem 'rspec-rails', '~> 2.0'
 end
 
