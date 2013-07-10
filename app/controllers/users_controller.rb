@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.find_by_user_name(params[:user][:user_name])
-    if user && User.authenticate(params[:user][:password])
-        oldcount = user.login_count
-        user.update_attributes(:login_count => oldcount + 1)
+    @user = User.find_by_user_name(params[:user][:user_name])
+    if @user && User.authenticate(params[:user][:password])
+        @oldcount = @user.login_count
+        @user.update_attributes(:login_count => @oldcount + 1)
         render 'count/count'
         # redirect_to user_path(user)
     else
