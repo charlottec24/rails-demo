@@ -20,7 +20,7 @@ development:
   database: rails-demo_development
   host: localhost
   pool: 5
-  username: Charlotte
+  username: 
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -50,7 +50,7 @@ test:
   database: rails-demo_test
   host: localhost
   pool: 5
-  username: Charlotte
+  username: 
   password:
 
 # production:

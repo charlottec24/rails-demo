@@ -1,13 +1,19 @@
 RailsDemo::Application.routes.draw do
   
-  root "welcome#index"
+  root "users#index"
 
-  post "login" => 'users#login'
+  # post "login" => 'users#login'
   
-  get "signup" => 'users#signup_display'
+  # get "signup" => 'users#signup_display'
 
-  post "signup" => 'users#signup'
+  # post "signup" => 'users#signup'
 
+  resources :users, :only => [:show, :create, :new] do
+  collection do
+    post 'login'
+    post 'logout'      
+  end
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

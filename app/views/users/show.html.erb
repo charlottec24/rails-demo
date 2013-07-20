@@ -1,0 +1,7 @@
+<h1>Welcome <%= @user.user_name %></h1>
+
+<p>You have logged in <%= @oldcount %> times</p>
+
+<%= form_for :user, :url => logout_users_path do |f| %>
+		<%= f.submit "Logout" %>
+<% end %>

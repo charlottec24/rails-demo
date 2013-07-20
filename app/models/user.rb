@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   	end 
 
 	def self.authenticate(password)
-		User.find_by_password(password)#match_password(password)
+		User.find_by_password(password)
 	end
 
 end

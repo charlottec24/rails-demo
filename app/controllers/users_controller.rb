@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
   
   # def logged_in?
-  #   session[:user]
+  #   !!session[:user]
   # end
 
-  def signup_display
-    render "signup"
+  def new
+    @user = User.new
   end
   
-  def signup   
+  def create   
     User.create!(user_params)
+    redirect_to root
   end
 
   def login
@@ -17,14 +18,19 @@ class UsersController < ApplicationController
     if @user && User.authenticate(params[:user][:password])
         @oldcount = @user.login_count
         @user.update_attributes(:login_count => @oldcount + 1)
-        render 'count/count'
-        # redirect_to user_path(user)
+        session[:user_id]
+        redirect_to user_path(@user)
     else
       flash[:notice] = "User or password is invalid"
     end
   end
 
- private
+  def logout
+    session.clear
+    redirect_to '/'
+  end
+
+private
 
   def user_params
     params.require(:user).permit(:user_name, :password)
